@@ -1,4 +1,5 @@
 apply plugin: 'scala'
+apply plugin: 'application'
 
 repositories{
         maven {url "//replace this comment with your maven remote repository
@@ -13,10 +14,4 @@ task wrapper(type: Wrapper){
         gradleVersion=2.7
 }
 
-
-task run(type: JavaExec, dependsOn: classes) {
-        main = 'Hello'
-        classpath sourceSets.main.output.classesDir
-        classpath configurations.runtime
-}
-
+mainClassName='Hello'
